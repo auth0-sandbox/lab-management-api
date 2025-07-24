@@ -1,0 +1,19 @@
+{
+    "name": "Auth0 Application Development",
+    "build": {
+        "dockerfile": "Dockerfile",
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "/Users/joelmussman/source/repos/vscode-browse-lite/browse-lite-0.3.9.vsix"
+            ]
+        }
+    },
+    "portsAttributes": {
+        "38443": {
+            "onAutoForward": "ignore"
+        }
+    },
+    "postCreateCommand": "mkcert -install; Xvfb :99 -screen 0 1024x768x16 &"
+}

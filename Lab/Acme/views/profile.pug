@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  .content
+    h1 Profile
+    p
+      | Hello
+      |
+      if user
+        a(href='/user')=user.name
+      else
+        | Anonymous
+      |,
+    if user
+        - optin = profile?.app_metadata?.optin_mfa || false
+        form(action="/profile/app_metadata/optin_mfa", method="post" id="optinMfaForm" style="display: inline;")
+            input(type="checkbox" name="optin_mfa" checked=optin onchange="this.form.submit()")
+            label(for="optin_mfa") &nbsp;&nbsp;Opt-in to MFA
+        if optin
+            | &nbsp;&nbsp;&nbsp;
+            form(action="/profile/authenticators/clear", method="post" id="clearEnrollmentsForm" style="display: inline;")
+                button(type="submit") Clear Authenticator Enrollments
+        pre #{JSON.stringify(profile, null, 4)}
+
+    else
+        p Please sign on to see your personal expenses.

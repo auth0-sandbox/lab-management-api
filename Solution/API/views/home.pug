@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    .content
+        h1 Acme Expenses Backend API
+        p 
+            | This web service provides a skeleton that applications can query for expenses: totals and reports.
+
+        h2 Permissions
+        p
+            | Entrance to this API is controlled with OAuth2 access tokens.
+            | You can request the following permissions during an authorization request with the identity provider:
+        ul
+            li read:totals - Read user expense totals
+            li read:reports - Read user expense reports
+
+        h2 Endpoints
+        ul 
+            li GET / - Displays this page
+            li GET #[a(href="/expenses/auth0|684c417378bc64b837ab0c08/totals") /expenses/{userid}/totals] - Returns the total amount of expenses (requires read:totals permission)
+            li GET #[a(href="/expenses/auth0|684c417378bc64b837ab0c08/reports") /expenses/{userid}/reports] - Returns all expenses (requires read:reports permission)
