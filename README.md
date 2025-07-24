@@ -8,6 +8,12 @@ Visit the [Auth0-Application-Development](https://github.com/auth0-sandbox/auth0
 lab instructions and the sequential list of the labs in this series.
 The work will be completed in the *Lab* folder; the *Solution* folder contains the completed solution sans the .env configurations.
 
+Options to complete this lab (full instructions are in the repository noted above):
+
+1. Click the green "Code" button and launch the lab in a GitHub Codespace under your GitHub account.
+1. Clone this repository to your local computer and open the project in Visual Studio Code.
+1. Clone this repository to your computer and open it in a Docker container.
+
 ## Dependencies
 
 * The Auth0 ACME Financial Management client configuration
